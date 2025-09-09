@@ -39,7 +39,7 @@ public class BookLibraryModification {
         Date finalWantedDate = dateFormat.parse(date);
 
         books.stream().filter(b -> b.getRelieasedDate().after(finalWantedDate))
-                .sorted(Comparator.comparing(Book::getRelieasedDate).thenComparing(Book::getTitle))
+                .sorted(Comparator.comparing(Book::getReleasedDate).thenComparing(Book::getTitle))
                 .forEach(b -> System.out.printf("%s -> %td.%tm.%tY%n", b.getTitle(),
                         b.getRelieasedDate(), b.getRelieasedDate(), b.getRelieasedDate()));
     }
